@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="jar" name="QuickTextFileViewer">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+	<property name="jar.file" value="F3TextViewer.jar"/>
+	
+    <path id="QuickTextFileViewer.classpath">
+        <pathelement location="bin"/>
+    </path>
+              	
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+              	
+    <target name="clean">
+        <delete dir="bin"/>
+    	<delete file="${jar.file}"/>
+    </target>
+	
+    <target depends="init" name="build">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="QuickTextFileViewer.classpath"/>
+        </javac>
+    </target>
+
+    <target name="jar" depends="build">
+        <jar destfile="${jar.file}" basedir="bin">
+            <manifest>
+                <attribute name="Main-Class" value="de.dominicscheurer.quicktxtview.Main"/>
+            </manifest>
+        </jar>  
+    </target>
+              	
+    <target name="Main">
+        <java classname="de.dominicscheurer.quicktxtview.Main" failonerror="true" fork="yes">
+            <arg line="/home/dscheurer"/>
+            <classpath refid="QuickTextFileViewer.classpath"/>
+        </java>
+    </target>
+</project>
