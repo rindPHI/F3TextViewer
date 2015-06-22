@@ -8,7 +8,7 @@ Just run `ant` in the project directory.
 
 ## Usage
 
-1. Start the program with `java -jar F3TextViewer [directory]`.
+1. Start the program with `java -jar F3TextViewer.jar [directory]`.
 2. Navigate to the directory to inspect; you will be presented the contained files in the right pane.
 3. Press **F3** to switch from *file name mode* to *file contents mode*.
 
