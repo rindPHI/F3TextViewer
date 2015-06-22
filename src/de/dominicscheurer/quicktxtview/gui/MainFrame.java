@@ -12,6 +12,8 @@
  * 
  * You should have received a copy of the GNU General Public License
  * along with F3TextViewer.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * Copyright 2015 by Dominic Scheurer <dscheurer@dominic-scheurer.de>.
  */
 
 package de.dominicscheurer.quicktxtview.gui;
