@@ -32,6 +32,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
 public class DisplayPanel extends JPanel {
+	private static final int MAX_FILESIZE_TO_DISPLAY = 5 * 1024;
+
 	private static final long serialVersionUID = 3448497585770186687L;
 	
 	JTextPane textPane = null;
@@ -76,7 +78,7 @@ public class DisplayPanel extends JPanel {
 		StringBuffer sb = new StringBuffer();
 		sb.append("<HTML><BODY>");
 		for (File file : files) {
-			if (file.length() > 1024) {
+			if (file.length() > MAX_FILESIZE_TO_DISPLAY) {
 				continue;
 			}
 			
