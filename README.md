@@ -2,6 +2,10 @@
 
 Simple text viewer for quickly inspecting the content of all text files in a directory at once.
 
+---
+**NOTE:** F3TextViewer has been deprecated in favor of F3TextViewerFX: https://github.com/rindPHI/F3TextViewerFX.
+---
+
 ## Build
 
 Just run `ant` in the project directory.
